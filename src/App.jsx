@@ -22,19 +22,25 @@ function App() {
 
     setData(result.slip);
   };
-  
+
   const { id, advice } = data;
 
   return (
     <>
-      <section className="bg-[#202733] h-screen w-full flex justify-center place-items-center">
-        <div className="w-96 h-60 bg-[#313A48] rounded-md px-8 grid grid-rows-4 grid-cols-3 grid-flow-col gap-4 justify-items-center">
-          <p className="text-[#53FFAA] self-center col-span-3">Advice #{id}</p>
-          <h1 className="text-[#CEE3E9] col-span-3 content-center text-lg font-bold">{advice}</h1>
+      <section className="bg-[#202733] h-screen px-6 md:w-full flex justify-center place-items-center">
+        <div className="w-96 h-60 bg-[#313A48] rounded-md px-8 grid grid-rows-4 grid-cols-3 grid-flow-col 
+        gap-4 justify-items-center">
+          <p className="text-[#53FFAA] self-center col-span-3 pt-4 font-manrope text-center tracking-[.25em] 
+          uppercase text-sm font-light">
+            Advice #{id}
+          </p>
+          <h1 className="text-[#CEE3E9] col-span-3 content-center font-manrope text-lg font-bold text-center">
+            {"\"" + advice + "\""}
+          </h1>
           <div className="col-span-3 flex items-center mt-10 space-x-3">
-            <div className="h-0.5 w-40 grow bg-[#4F5D74]"></div>
+            <div className="h-0.5 w-32 md:w-40 bg-[#4F5D74]"></div>
             <img src={separatorImg} alt="separator" />
-            <div className="h-0.5 w-40 grow bg-[#4F5D74]"></div>
+            <div className="h-0.5 w-32 md:w-40 bg-[#4F5D74]"></div>
           </div>
           <img
             src={adviceBtn}
