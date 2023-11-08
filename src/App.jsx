@@ -5,23 +5,19 @@ import { useState, useEffect } from "react";
 function App() {
   const [data, setData] = useState([]);
 
+  const getData = async () =>{
+    try{
+      const response = await fetch("https://api.adviceslip.com/advice")
+      const result = await response.json()
+      setData(result.slip)
+    } catch (error){
+      console.log("error getting the advice")
+    }
+  }
+
   useEffect(() => {
-    fetch("https://api.adviceslip.com/advice ")
-      .then((response) => response.json())
-      .then((result) => {
-        setData(result.slip);
-      })
-      .catch((error) => {
-        console.log("Error getting the advice", error);
-      });
+    getData()
   }, []);
-
-  const handleAdviceClick = async () => {
-    const response = await fetch("https://api.adviceslip.com/advice");
-    const result = await response.json();
-
-    setData(result.slip);
-  };
 
   const { id, advice } = data;
 
@@ -46,7 +42,7 @@ function App() {
             src={adviceBtn}
             className="pt-4 col-span-3 hover:shadow-glow"
             alt="advice button"
-            onClick={handleAdviceClick}
+            onClick={()=> getData()}
           />
         </div>
       </section>
