@@ -24,23 +24,22 @@ function App() {
   return (
     <>
       <section className="bg-[#202733] h-screen px-6 md:w-full flex justify-center place-items-center">
-        <div className="w-96 h-60 bg-[#313A48] rounded-md px-8 grid grid-rows-4 grid-cols-3 grid-flow-col 
-        gap-4 justify-items-center">
-          <p className="text-[#53FFAA] self-center col-span-3 pt-4 font-manrope text-center tracking-[.25em] 
-          uppercase text-sm font-light">
+        <div className="w-96 h-fit bg-[#313A48] rounded-md px-8 flex flex-col items-center">
+          <p className="text-[#53FFAA] self-center pt-4 font-manrope text-center tracking-[.25em] 
+          uppercase text-sm font-light mb-4 ">
             Advice #{id}
           </p>
-          <h1 className="text-[#CEE3E9] col-span-3 content-center font-manrope text-lg font-bold text-center">
+          <h1 className="text-[#CEE3E9] content-center font-manrope text-lg font-bold text-center mt-3 mb-3">
             {"\"" + advice + "\""}
           </h1>
-          <div className="col-span-3 flex items-center mt-10 space-x-3">
+          <div className="flex items-center mt-5 space-x-3">
             <div className="h-0.5 w-32 md:w-40 bg-[#4F5D74]"></div>
             <img src={separatorImg} alt="separator" />
             <div className="h-0.5 w-32 md:w-40 bg-[#4F5D74]"></div>
           </div>
           <img
             src={adviceBtn}
-            className="pt-4 col-span-3 hover:shadow-glow"
+            className="hover:shadow-glow ransform translate-y-1/2"
             alt="advice button"
             onClick={()=> getData()}
           />
